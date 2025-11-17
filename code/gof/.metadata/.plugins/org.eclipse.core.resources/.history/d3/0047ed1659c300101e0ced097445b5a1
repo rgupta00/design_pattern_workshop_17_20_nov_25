@@ -1,0 +1,5 @@
+package com.dp.structural.a.adaptor.ex2;
+//making round peg adaptable to squarepeg
+public class PegAdaptor extends SquarePeg {
+
+}

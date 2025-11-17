@@ -1,0 +1,6 @@
+package com.dp.structural.a.adaptor.ex2;
+class RoundPeg {
+	public void insertTohole(String str) {
+		System.out.println("roundpeg insertTohole(): " + str);
+	}
+}

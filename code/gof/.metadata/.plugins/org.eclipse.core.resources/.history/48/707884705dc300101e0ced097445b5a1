@@ -1,0 +1,25 @@
+package com.dp.behavioural.d.chain_of_resp1;
+
+/*
+ * 
+The Chain of Responsibility (CoR) design pattern
+----------------------------------------------
+	 allows a request to pass through a 
+	chain of handlers where each handler decides
+	 either to process the request or pass it to the next handler.
+ 
+	Customer Support System
+	-----------------------------
+	When you raise a support ticket:
+		1. First handled by a bot.
+		2. If unresolved, passed to agent.
+		3. Further escalated to manager if needed.
+	This is exactly how CoR works.
+ */
+
+public class Main {
+
+	public static void main(String[] args) {
+
+	}
+}

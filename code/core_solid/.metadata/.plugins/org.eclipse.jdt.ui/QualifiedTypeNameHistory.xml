@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="com.oops.ex2.StackImpUsingArray"/>
+    <fullyQualifiedTypeName name="com.solid.pattern.isp.repo.OrderRepo"/>
+    <fullyQualifiedTypeName name="com.solid.pattern.isp.entities.Entity"/>
+    <fullyQualifiedTypeName name="com.solid.pattern.isp.entities.Order"/>
+    <fullyQualifiedTypeName name="com.solid.pattern.isp.entities.User"/>
+    <fullyQualifiedTypeName name="com.oops.ex3.Monkey"/>
+    <fullyQualifiedTypeName name="com.oops.ex2.StackImpAmit"/>
+</qualifiedTypeNameHistroy>

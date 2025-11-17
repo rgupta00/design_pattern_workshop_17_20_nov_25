@@ -1,0 +1,50 @@
+package com.dp.behavioural.b.observer_dp2;
+
+import java.util.ArrayList;
+import java.util.List;
+
+//Subject (Observable)
+interface Subject {
+	void addObserver(Observer o);
+	void removeObserver(Observer o);
+	void notifyObservers(String message);
+}
+
+// Observer (Subscriber)
+interface Observer {
+	void update(String message);
+}
+
+//Concrete Subject
+class NewsAgency {
+	private List<Observer> observers = new ArrayList<>();
+
+}
+
+//Concrete Observers
+class EmailSubscriber implements Observer {
+	public void update(String message) {
+		System.out.println("Email received: " + message);
+	}
+}
+
+//Concrete Observers
+class SMSSubscriber implements Observer {
+	public void update(String message) {
+		System.out.println("SMS received: " + message);
+	}
+}
+
+public class DemoObserverPattern {
+
+	public static void main(String[] args) {
+		NewsAgency agency = new NewsAgency();
+		Observer email = new EmailSubscriber();
+		Observer sms = new SMSSubscriber();
+
+//		agency.addObserver(email);
+//		agency.addObserver(sms);
+//
+//		agency.setNews("Java 25 Released!");
+	}
+}

@@ -1,0 +1,29 @@
+package com.dp.structural.a.adaptor.ex2;
+class RoundPeg {
+	public void insertTohole(String str) {
+		System.out.println("roundpeg insertTohole(): " + str);
+	}
+}
+class SquarePeg {
+	public void insert(String str) {
+		System.out.println("SquarePeg insert(): " + str);
+	}
+}
+class PegAdaptor extends SquarePeg {
+
+}
+
+public class Demo {
+
+	public static void main(String[] args) {
+
+		RoundPeg peg = new RoundPeg();
+
+		//useSquarePeg(peg);
+	}
+	
+	public static void useSquarePeg(SquarePeg peg) {
+		//do some operation
+		peg.insert("some random shape");
+	}
+}
