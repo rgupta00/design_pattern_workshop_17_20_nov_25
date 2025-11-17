@@ -1,0 +1,19 @@
+package com.b.solid.pattern.lsp1;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+//FIFO
+//Create queue using LL
+
+//bad code
+
+public class Queue extends LinkedList<String> {
+	
+	public void addData(String data) {
+		super.addLast(data);
+	}
+	
+	public void removeData() {
+		super.removeFirst();
+	}
+}

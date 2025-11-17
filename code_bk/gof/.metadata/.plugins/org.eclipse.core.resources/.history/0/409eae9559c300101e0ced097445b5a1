@@ -1,0 +1,5 @@
+package com.dp.structural.d.facade;
+
+public class FundTransferFacade {
+	public void transferFunds(String fromAcc, String toAcc, double amount);
+}

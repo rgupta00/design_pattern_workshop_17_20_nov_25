@@ -1,5 +1,5 @@
 https://www.linkedin.com/in/rajeevguptajavatrainer/
-https://github.com/rgupta00/design_pattern_workshop_27_30_oct25
+https://github.com/rgupta00/design_pattern_workshop_17_20_nov_25
 
 
 Deep Dive design pattern with java

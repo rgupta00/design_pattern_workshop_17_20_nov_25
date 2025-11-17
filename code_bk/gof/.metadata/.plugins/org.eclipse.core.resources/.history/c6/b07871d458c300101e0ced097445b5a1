@@ -1,0 +1,8 @@
+package com.dp.creational.d2.factory_method;
+
+public class SimpleFactoryDemo {
+	public static void main(String[] args) {
+		
+	}
+}
+
