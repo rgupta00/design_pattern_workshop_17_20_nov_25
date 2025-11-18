@@ -1,13 +1,14 @@
 package com.oops.employeemgtsytem;
 
-public class Invoice extends Employee {
+public class Invoice implements Payable {
 	private String regNo;
 	private String name;
 	private int noOfDays;
 	private int ratePerDay;
 
-	public Invoice(int id, String name, double amount, String regNo, int noOfDays, int ratePerDay) {
-		super(id, name, amount);
+	public Invoice(String regNo, String name, int noOfDays, int ratePerDay) {
+		this.regNo = regNo;
+		this.name = name;
 		this.noOfDays = noOfDays;
 		this.ratePerDay = ratePerDay;
 	}

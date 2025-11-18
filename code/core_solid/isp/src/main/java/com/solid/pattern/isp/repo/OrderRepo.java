@@ -24,11 +24,4 @@ public class OrderRepo implements CrudRepository<Order>{
 		return null;
 	}
 
-	@Override
-	public List<Order> findByName(String name) {
-		if(1==1)
-		throw new RuntimeException();
-		return null;
-	}
-
 }

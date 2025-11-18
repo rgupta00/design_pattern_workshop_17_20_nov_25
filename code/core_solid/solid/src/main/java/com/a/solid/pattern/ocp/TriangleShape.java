@@ -1,8 +1,8 @@
 package com.a.solid.pattern.ocp;
 
-public class TriangleShape{
-	public void drawTriangleShape() {
-		System.out.println("drawing Tri");
+public class TriangleShape  extends Shape{
+	
+	public void drawShape() {
+		System.out.println("drawing tri");
 	}
-
 }

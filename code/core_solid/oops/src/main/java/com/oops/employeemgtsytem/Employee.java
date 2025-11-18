@@ -1,7 +1,6 @@
 package com.oops.employeemgtsytem;
 
-abstract public class Employee {
-
+abstract public class Employee implements Payable {
 	private int id;
 	private String name;
 	private double amount;
@@ -17,8 +16,6 @@ abstract public class Employee {
 		return amount;
 	}
 
-	public abstract double payable();
-	
 	public void printEmpDetails() {
 		System.out.println("emp details : "+ id+" name: "+ name+" base salary: "+ amount);
 	}

@@ -1,8 +1,8 @@
 package com.a.solid.pattern.ocp;
 
-public class SquareShape{
-	public void drawSquareShape() {
-		System.out.println("drawing sq");
+public class SquareShape extends Shape{
+	
+	public void drawShape() {
+		System.out.println("drawing Square");
 	}
-
 }

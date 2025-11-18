@@ -1,8 +1,7 @@
 package com.a.solid.pattern.ocp;
 
-public class RectangleShape{
-	public void drawRectangeShape() {
-		System.out.println("drawing reactange");
+public class RectangleShape extends Shape{
+	public void drawShape() {
+		System.out.println("drawing rectangle");
 	}
-
 }

@@ -32,20 +32,29 @@ class Rectangle {
 }
 //Why not to inherit rectangle in order to resue the logic
 
-class Square extends Rectangle {
+//class Square extends Rectangle {
+//
+//	public Square(int l) {
+//		super(l, l);
+//	}
+//
+//	@Override
+//	public int calculateArea() {
+//		return super.calculateArea();
+//	}
+//}
 
+class Square  {
+	private Rectangle rectangle;
+	
 	public Square(int l) {
-		super(l, l);
+		rectangle=new Rectangle(l, l);
 	}
-
-	@Override
+	
 	public int calculateArea() {
-		return super.calculateArea();
+		return rectangle.calculateArea();
 	}
-
 }
-
-
 
 public class B_DemoLiskov {
 
@@ -58,6 +67,7 @@ public class B_DemoLiskov {
 		Square square = new Square(3);
 		int area = square.calculateArea();
 		System.out.println(area);
+		//square.setB(12);
 		
 		
 	}

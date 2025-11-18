@@ -2,20 +2,18 @@ package com.solid.pattern.isp.repo;
 
 import java.util.List;
 
+import com.solid.pattern.isp.entities.Entity;
 import com.solid.pattern.isp.entities.User;
 
-public class UserRepo implements CrudRepository<User>{
-
+public class UserRepo implements CrudRepository<User>, FindByNameRepository<Entity>{
 	@Override
 	public void save(User entity) {
 		//make a sence
 	}
-
 	@Override
 	public void delete(User entity) {
 		//make a sence
 	}
-
 	@Override
 	public User findById(Long id) {
 		//make a sence
@@ -23,7 +21,7 @@ public class UserRepo implements CrudRepository<User>{
 	}
 
 	@Override
-	public List<User> findByName(String name) {
+	public List<Entity> findByName(String name) {
 		 //make a sence
 		return null;
 	}
