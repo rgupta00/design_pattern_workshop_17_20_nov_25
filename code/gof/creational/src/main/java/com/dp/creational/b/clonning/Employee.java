@@ -10,7 +10,7 @@ import java.util.Date;
 		
 	}
  */
-class Employee{
+class Employee implements Cloneable{
 	private Integer id;
 	private String name;
 	private Date hireDay;//mutable
@@ -55,6 +55,16 @@ class Employee{
 	public void setHireDay(Date hireDay) {
 		this.hireDay = hireDay;
 	}
+
+	@Override
+	protected Employee clone() throws CloneNotSupportedException {
+		Employee employee=(Employee) super.clone();
+		employee.hireDay=(Date) hireDay.clone();
+		
+		return employee;
+	}
+	
+	
 }
 
 

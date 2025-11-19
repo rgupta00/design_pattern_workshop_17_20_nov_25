@@ -1487,6 +1487,8 @@ Why this is better
 	private constructor prevents inconsistent Food creation.
 
 
+show this			
+simple factroy --> factory method --> abs factory ( factory of factory pattern)
 
 	
 	Factory Method
@@ -2800,6 +2802,24 @@ remote.setChannel(15);
 
 
 Works again — implementation untouched.
+
+
+
+JDK Example: java.sql.Driver + DriverManager
+---------------------------------------
+This is a classic.
+
+Where is the Bridge?
+	Abstraction → JDBC API (Connection, Statement, PreparedStatement)
+	Implementation → Vendor Drivers (com.mysql.jdbc.Driver, org.postgresql.Driver)
+
+Your code does only this:
+	Connection con = DriverManager.getConnection(url, user, pass);
+	But MYSQL/Postgres implementations are loaded dynamically.
+
+Abstraction (JDBC API) is separated from Implementation (Vendor-specific drivers)
+This is Bridge Pattern.
+
 
 Inheritance vs Composition (Why Bridge Exists)
 ------------------------------------------

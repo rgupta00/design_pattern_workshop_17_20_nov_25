@@ -14,26 +14,37 @@ import java.io.Serializable;
 	=> best practices, effective java
 	=> using enum
  */
-final public class Singleton {
+final public class Singleton implements Cloneable, Serializable {
+
+	
+	private volatile static Singleton singleton;
+
+	private Singleton() {
+		if(singleton!=null) {
+			throw new IllegalStateException();
+		}
+	}
+
+	private Object readResolve() {
+		return getSingleton();
+	}
+	public static Singleton getSingleton() {
+		if (singleton == null) {
+			synchronized (Singleton.class) {
+				if (singleton == null)
+					singleton = new Singleton();
+			}
+		}
+		return singleton;
+	}
+
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		return singleton;
+	}
 
 	
 }
 
 //int i=5;
 //long i=5;read in two step
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

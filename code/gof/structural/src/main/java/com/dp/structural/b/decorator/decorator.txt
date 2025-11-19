@@ -2,9 +2,11 @@
 decorator pattern / wrapper pattern 
 =================================
 
-	=> Decorator pattern helpful in adding behaviour to objects statically or dynamically.
+	=> Decorator pattern helpful in adding behaviour to 
+	objects statically or dynamically.
 
-	=> Decorator pattern helps in extending the functionality of the objects without
+	=> Decorator pattern helps in extending the functionality of 
+	the objects without
 	 effecting the behaviour of other objects.
 
 	=> Decorator adhering to the design principle of Open for extension and closed for modification

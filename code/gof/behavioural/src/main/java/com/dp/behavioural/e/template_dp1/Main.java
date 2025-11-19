@@ -24,22 +24,36 @@ abstract class OnlineExam {
 	}
 }
 
-class JavaExam {
-	
-}
-class MathsExam{
-	
-}
-public class Main {
+class JavaExam extends OnlineExam {
 
+	@Override
+	protected void presentQuestions() {
+		System.out.println("what is java");
+		System.out.println("what is jvm");
+	}
+
+}
+
+class MathsExam extends OnlineExam {
+
+	@Override
+	protected void presentQuestions() {
+		System.out.println("what is LCM");
+		System.out.println("what is HCF");
+	}
+}
+
+class Main {
 	public static void main(String[] args) {
-//		OnlineExam exam1 = new JavaExam();
-//		exam1.conductExam();
-//
-//		System.out.println("-----");
-//
-//		OnlineExam exam2 = new MathsExam();
-//		exam2.conductExam();
+
+		OnlineExam exam1 = new JavaExam();
+		exam1.conductExam();
+		//
+//			System.out.println("-----");
+		//
+		OnlineExam exam2 = new MathsExam();
+		exam2.conductExam();
 
 	}
+
 }
