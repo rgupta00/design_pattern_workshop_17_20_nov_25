@@ -10,17 +10,6 @@ interface Subject {
 	void notifyObservers(String message);
 }
 
-// Observer (Subscriber)
-interface Observer {
-	void update(String message);
-}
-
-//Concrete Subject
-class NewsAgency {
-	private List<Observer> observers = new ArrayList<>();
-
-}
-
 //Concrete Observers
 class EmailSubscriber implements Observer {
 	public void update(String message) {
@@ -35,6 +24,39 @@ class SMSSubscriber implements Observer {
 	}
 }
 
+
+//Observer (Subscriber)
+interface Observer {
+	void update(String message);
+}
+
+//Concrete Subject
+class NewsAgency implements Subject {
+
+	private List<Observer> observers = new ArrayList<>();
+
+	@Override
+	public void addObserver(Observer o) {
+		observers.add(o);
+	}
+
+	@Override
+	public void removeObserver(Observer o) {
+		observers.remove(o);
+	}
+
+	@Override
+	public void notifyObservers(String message) {
+		for (Observer o : observers) {
+			o.update(message);
+		}
+	}
+	public void setNews(String news) {
+		System.out.println("recived new news going to broadcast!");
+		notifyObservers(news);
+	}
+}
+
 public class DemoObserverPattern {
 
 	public static void main(String[] args) {
@@ -42,9 +64,9 @@ public class DemoObserverPattern {
 		Observer email = new EmailSubscriber();
 		Observer sms = new SMSSubscriber();
 
-//		agency.addObserver(email);
-//		agency.addObserver(sms);
-//
-//		agency.setNews("Java 25 Released!");
+		agency.addObserver(email);
+		agency.addObserver(sms);
+
+		agency.setNews("Java 25 Released!");
 	}
 }

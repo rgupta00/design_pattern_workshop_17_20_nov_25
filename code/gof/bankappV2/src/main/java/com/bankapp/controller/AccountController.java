@@ -26,24 +26,25 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class AccountController {
 
-	private final AccountServiceFacade accountServiceFacade;
+	private final AccountServiceFacade accountService;
 
 	// get all account
 	@GetMapping(path = "accounts")
 	public List<Account> getAll() {
-		return accountServiceFacade.getAll();
+		return accountService.getAll();
 	}
 
 	// get by id
 	@GetMapping(path = "accounts/{id}")
 	public Account getById(@PathVariable("id") int id) {
-		return accountServiceFacade.getById(id);
+		return accountService.getById(id);
 	}
 
 	// transfer
 	@PostMapping(path = "transfer")
 	public String transfer(@RequestBody TransferDto transferDto) {
-		accountServiceFacade
+		
+		accountService
 		.transfer(transferDto.getFromAccId(), 
 				transferDto.getToAccId(), transferDto.getAmount());
 		return "transfer successfully";

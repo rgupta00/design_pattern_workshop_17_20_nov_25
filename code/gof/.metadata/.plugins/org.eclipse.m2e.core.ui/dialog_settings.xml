@@ -68,6 +68,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\design_pattern_workshop_17_20_nov_25\code\gof\orderapp"/>
 			<item value="C:\design_pattern_workshop_17_20_nov_25\code_bk\gof\behavioural"/>
 		</list>
 		<list key="projectNameTemplate">

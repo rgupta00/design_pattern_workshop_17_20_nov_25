@@ -4,41 +4,47 @@ import java.util.Observable;
 import java.util.Observer;
 //NewsAgency---> EmailSubscriber, SmsSubscriber
 
-//Observable using  Built-in  Observable class
-class NewsAgency {
+//Observable using  Built-in  Observable class: java 9 how observber is impl in jdk is deprecated ...
 
+class NewsAgency extends Observable {
 	private String news;
-
 	public void setNews(String news) {
 		this.news = news;
 		System.out.println("Agency: " + news);
-		// Mark as changed before notifying
-		// Notify all observers with message
+		 setChanged(); // Mark as changed before notifying
+		notifyObservers(news);// Notify all observers with message
 	}
 }
 
 //Concrete Observers using Built-in Observer interface
-class EmailSubscriber {
-
+class EmailSubscriber implements Observer {
+	@Override
+	public void update(Observable o, Object arg) {
+		System.out.println("email is recived: "+ arg);
+	}
+}
+class SMSSubscriber implements Observer {
+	@Override
+	public void update(Observable o, Object arg) {
+		System.out.println("SMS is recived: "+ arg);
+	}
 }
 
-class SMSSubscriber {
-
-}
 
 public class Main {
 
 	public static void main(String[] args) {
 		NewsAgency agency = new NewsAgency();
 
-//		Observer email = new EmailSubscriber();
-//		Observer sms = new SMSSubscriber();
+		Observer email = new EmailSubscriber();
+		Observer sms = new SMSSubscriber();
 //		// Attach observers
-//		agency.addObserver(email);
-//		agency.addObserver(sms);
+		agency.addObserver(email);
+		agency.addObserver(sms);
 
 		// Change news and notify all observers
 		agency.setNews("Java 25 Released!");
+		agency.deleteObserver(sms);
 		agency.setNews("Spring Boot 4.x  Announced!");
 	}
 }

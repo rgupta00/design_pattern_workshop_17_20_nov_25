@@ -42,26 +42,32 @@ class Apple {
 
 }
 
+//class Inventrory {
+//
+//	public static List<Apple> getGreenApple(List<Apple> apples) {
+//		List<Apple> geenApples = new ArrayList<Apple>();
+//		for (Apple temp : apples) {
+//			if (temp.getColor().equalsIgnoreCase("green"))
+//				geenApples.add(temp);
+//		}
+//		return geenApples;
+//	}
+//	public static List<Apple> getHeavyApple(List<Apple> apples) {
+//		List<Apple> heavyApples = new ArrayList<Apple>();
+//		for (Apple temp : apples) {
+//			if (temp.getWeight()>=250)
+//				heavyApples.add(temp);
+//		}
+//		return heavyApples;
+//	}
+//}
+//Light wt st design pattern
 class Inventrory {
-
-	public static List<Apple> getGreenApple(List<Apple> apples) {
-		List<Apple> geenApples = new ArrayList<Apple>();
-		for (Apple temp : apples) {
-			if (temp.getColor().equalsIgnoreCase("green"))
-				geenApples.add(temp);
-		}
-		return geenApples;
-	}
-	public static List<Apple> getHeavyApple(List<Apple> apples) {
-		List<Apple> heavyApples = new ArrayList<Apple>();
-		for (Apple temp : apples) {
-			if (temp.getWeight()>=250)
-				heavyApples.add(temp);
-		}
-		return heavyApples;
+	public static List<Apple> getApplesOnCondition(List<Apple> apples,
+			Predicate<Apple> predicate) {
+		return apples.stream().filter(predicate).toList();
 	}
 }
-
 
 
 public class DemoBehaviouralParameterization {
@@ -71,6 +77,13 @@ public class DemoBehaviouralParameterization {
 		System.out.println("------------list of apples -----------");
 		apples.forEach(a-> System.out.println(a));
 		System.out.println("-----------list apples based on heavyness >=250-------");
+		
+		Predicate<Apple> predicateRedApples=a->a.getColor().equals("red");
+		Predicate<Apple> predicateHeavyApples=a->a.getWeight()>250;
+		Predicate<Apple> heavyAndRed= predicateHeavyApples.and(predicateRedApples);
+		
+		List<Apple> redappes=Inventrory.getApplesOnCondition(apples, heavyAndRed);
+		
 		
 	}
 
